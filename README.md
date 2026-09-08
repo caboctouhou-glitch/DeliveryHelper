@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeliveryHelper - Optimiza tus ganancias</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #121212; color: #ffffff; text-align: center; padding: 20px; }
+        .card { background-color: #1e1e1e; padding: 20px; border-radius: 12px; max-width: 400px; margin: 0 auto; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+        h1 { color: #00e676; }
+        .btn { display: inline-block; background-color: #00e676; color: #000; padding: 15px 25px; font-weight: bold; text-decoration: none; border-radius: 8px; margin-top: 15px; }
+        .steps { text-align: left; margin-top: 20px; font-size: 0.9em; color: #cccccc; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>DeliveryHelper 🏍️</h1>
+        <p>Calcula tus ganancias netas reales en tiempo real para Uber Eats, DiDi y Rappi.</p>
+        <p><strong>Ahorra gasolina y frena el desgaste de tu moto evitando viajes trampa.</strong></p>
+        
+        <!-- Reemplaza esta URL con el link directo a tu APK firmado en GitHub Releases -->
+        <a href="https://github.com/tuusuario/DeliveryHelper/releases/download/v1.0/app-release.apk" class="btn">Descargar APK Oficial</a>
+
+        <div class="steps">
+            <h3>📌 Instrucciones de instalación:</h3>
+            <ol>
+                <li>Descarga el archivo APK.</li>
+                <li>Si Android te pide confirmación, selecciona <strong>"Permitir de esta fuente"</strong> o <strong>"Instalar de todos modos"</strong>.</li>
+                <li>Abre la app y concede el permiso de Accesibilidad para leer las ofertas en pantalla.</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
