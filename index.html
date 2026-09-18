@@ -10,6 +10,7 @@
         h1 { color: #00e676; }
         .btn { display: inline-block; background-color: #00e676; color: #000; padding: 15px 25px; font-weight: bold; text-decoration: none; border-radius: 8px; margin-top: 15px; }
         .steps { text-align: left; margin-top: 20px; font-size: 0.9em; color: #cccccc; }
+        .counter { margin-top: 15px; font-size: 0.85em; color: #888888; }
     </style>
 </head>
 <body>
@@ -18,7 +19,13 @@
         <p>Calcula tus ganancias netas reales en tiempo real para Uber Eats, DiDi y Rappi.</p>
         <p><strong>Ahorra gasolina y frena el desgaste de tu moto evitando viajes trampa.</strong></p>
         
-        <a href="DeliveryHelper Beta.apk" class="btn">Descargar APK Oficial</a>
+        <!-- Botón con evento para sumar una descarga -->
+        <a href="DeliveryHelper Beta.apk" class="btn" id="download-btn">Descargar APK Oficial</a>
+
+        <!-- Texto del contador -->
+        <div class="counter">
+            📥 Descargas totales: <span id="count">Cargando...</span>
+        </div>
 
         <div class="steps">
             <h3>📌 Instrucciones de instalación:</h3>
@@ -29,5 +36,30 @@
             </ol>
         </div>
     </div>
+
+    <script>
+        // Namespace y Key únicos para tu app en CountAPI (puedes cambiar "deliveryhelper-saltillo" si gustas)
+        const namespace = "deliveryhelper-saltillo";
+        const key = "downloads";
+
+        // Consultar el valor actual del contador al cargar la página
+        fetch(`https://api.countapi.xyz/get/${namespace}/${key}`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('count').innerText = data.value;
+            })
+            .catch(error => {
+                document.getElementById('count').innerText = "Disponible";
+            });
+
+        // Sumar 1 al contador cuando le den clic al botón de descarga
+        document.getElementById('download-btn').addEventListener('click', function() {
+            fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('count').innerText = data.value;
+                });
+        });
+    </script>
 </body>
 </html>
